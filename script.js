@@ -10,10 +10,10 @@ window.onload = function () {
     renderSoldiers();
     
   } 
-// function getSoldiers(){
-//     soldiers = localStorage.getItem('soldiers');
-//      soldiers = JSON.parse(soldiers) 
-//   }
+function sortSoldiers(){
+    
+    let filteredSoldiers = soldiers.sort(soldier.fullname)
+}
 inpbutton.addEventListener("click", addSoldier);
   
 function addSoldier(event) {
@@ -118,7 +118,8 @@ function saveSoldiers() {
       // כפתור שעורך את המשימה
       const editButton = document.createElement("button");
       editButton.textContent = "Edit";
-      editButton.onclick = () => editTodo(soldier.fullname);
+      editButton.setAttribute("id", soldier.editid)
+      editButton.onclick = () => editTodo(soldier.editid);
       actionsTd.appendChild(editButton);
 
       // למחוק משימה
@@ -170,4 +171,24 @@ const timer = setInterval(() => {
     }
     saveSoldiers();
     renderSoldiers();
+  }
+  function editSoldier(editId) {
+    console.log(editId);
+    const newinput = document.getElementById("newsectinput");
+    let popup = document.getElementsByClassName("popup")[0];
+    const targetObj = todos.find((obj) => obj.id === targetId);
+    popup.classList.add("open-popup");
+    let button = document.getElementById("newinpbutton");
+    button.textContent = "submit";
+    button.addEventListener("click", () => {
+      
+      targetObj.text = newinput.value;
+      saveEdit();
+    });
+  }
+  function saveEdit() {
+    saveTodos();
+    renderSects();
+    let popup = document.getElementsByClassName("popup")[0];
+    popup.classList.remove("open-popup");
   }
