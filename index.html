@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container popup">
+            <input type="text" id="newsectinput" name="sect">
+            <button id="newinpbutton">submit</button>
+    </div>
+    <div id="div-container">
+        
+        <form class="form" id="myform">
+            <input class="forminput" type="text" id="name" name="fullname" placeholder="Full Name">
+            <input class="forminput" type="text" id="sectinput" name="rank" placeholder="Rank">
+            <input class="forminput" type="text" id="sectinput" name="position" placeholder="Position">
+            <input class="forminput" type="text" id="sectinput" name="platoon" placeholder="Platoon">
+            <input class="forminput" type="number" id="sectinput" name="missiontime" placeholder="Mission Time (seconds)">
+            <select name="status" id="status-select" placeholder="status">
+                <!-- <option value="">--Please choose an option--</option> -->
+                <option value="active">Active</option>
+                <option value="reserve">Reserve</option>
+                <option value="retired">Retired</option>
+            
+              </select>
+            <input type="submit" id="inpbutton" value="Submit">
+       </form>
+  
+       <h1>FORCES OVERVIEW</h1>
+
+        <div id="div-table">
+            <table id="soldiertable">
+                <thead> <tr>
+                    <td><button id="but-full-name">Full Name</button></td>
+                    <td>RANK</td>
+                    <td>POSTION</td>
+                    <td>
+                        PLATOON
+                    </td>
+                    <td>STATUS</td>
+                    <td>ACTIONS</td>
+                </tr></thead>
+                <tbody id="tbody"></tbody>
+               
+        </table>
+            
+        </div>
+    </div>
+</body>
+</html>
